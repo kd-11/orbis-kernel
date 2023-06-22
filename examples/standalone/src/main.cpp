@@ -13,6 +13,7 @@
 #include <orbis/thread/Thread.hpp>
 #include <thread>
 #include <utility>
+#include <stdexcept>
 
 struct Registers {
   std::uint64_t r15;
@@ -55,6 +56,7 @@ uint64_t readRegister(void *context, RegisterId id) {
   case RegisterId::rax: return c->rax;
   case RegisterId::rsp: return c->rsp;
   case RegisterId::rflags: return c->rflags;
+  default: throw std::invalid_argument("Invalid register id");
   }
 }
 

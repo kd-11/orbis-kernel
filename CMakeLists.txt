@@ -74,4 +74,3 @@ add_library(orbis::kernel-shared ALIAS orbis-kernel-shared)
 
 target_link_libraries(orbis-kernel PUBLIC obj.orbis-kernel)
 target_link_libraries(orbis-kernel-shared PUBLIC obj.orbis-kernel)
-
